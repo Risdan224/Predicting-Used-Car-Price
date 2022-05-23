@@ -21,22 +21,19 @@ Salah satu permasalahan yang sering terjadi dalam bisnis jual beli mobil bekas a
 
 Membuat sebuah model yang dapat memprediksi harga mobil bekas berdasarkan spesifikasi yang dimiliki oleh mobil tersebut. Harga yang dihasilkan oleh model ini akan menjadi referensi bagi penjual dan pembeli mobil jika akan melakukan transaksi jual beli mobil bekas. Tujuannya adalah supaya penjual/ pembeli mobil bekas mengambil keputusan lebih cepat dalam melakukan transaksi (menjual/ membeli).
 
-Model ini dapat digunakan oleh platform jual beli mobil bekas online seperti Syarah.com agar pengunjung website yang ingin menjual atau membeli tidak ragu dalam menentukan harga, hal ini akan berdampak pada naiknya jumlah transaksi pada platform dan menaikkan pertumbuhan bisnis mobil bekas.
-
-**Matrix Evalution**
-
-Matrix yang akan digunakan untuk model ini adalah:
+Matrix yang akan digunakan untuk mengevaluasi model yang akan dibuat adalah:
 - Root Mean Squared Error (rmse)
 - R-Squared
 - Mean Absolute Error (MAE)
 - Mean Absolute Percentage Error (MAPE)
 - Mean Squared Log Error (MSLE)
 
+Model ini dapat digunakan oleh platform jual beli mobil bekas online seperti Syarah.com agar pengunjung website yang ingin menjual atau membeli tidak ragu dalam menentukan harga, hal ini akan berdampak pada naiknya jumlah transaksi pada platform dan menaikkan pertumbuhan bisnis mobil bekas.
+
 **Data Information**
 - Data yang digunakan merupakan data spesifikasi/fitur mobil bekas beserta beserta harga jualnya yang telah disediakan oleh Purwadhika. Dilihat dari bentuk dan pola data, diasumsikan bahwa data ini diambil dari website Syarah.com yang menjual mobil bekas di Saudi Arabia.
 - Data 'price'/harga untuk mobil bekas yang sifatnya 'negotiable' bernilai 0 (nol). Harga berdasarkan kesepakatan antara penjual dan pembeli.
-
-#### Attribute Information
+- Berikut adalah rincian fitur pada data
 
 | Attribute | Data Type| Description |
 | --- | --- | --- |
@@ -54,8 +51,31 @@ Matrix yang akan digunakan untuk model ini adalah:
 
 ## Exploratory Data Analysis
 
-<img src="=EDA1.png" alt="isolated" width="700"/>
+<img src="EDA2.png" alt="isolated" width="700"/>
 
-<img src="=EDA2.png" alt="isolated" width="700"/>
+- Daerah yang menawarkan penjualan mobil bekas terbanyak terdapat pada kota Riyadh, Dammam dan Jeddah. Harga penjualan mobil dari beberapa daerah tersebut bervariasi dan yang memiliki median tertinggi yaitu dari Kota Dammam dan Sakaka. Secara keseluruhan harga mobil tidak terlalu terpengaruh oleh daerahnya berasal.
+- Produsen mobil bekas terbanyak yang ditawarkan adalah dari Toyota, Hyundai dan Ford. Sedangkan median harga tertinggi adalah mobil buatan Rolls-Royce, Aston Martin dan Bentley. Mobil buatan Land Rover memiliki rentang harga yang paling tinggi, diikuti dengan mobil buatan dari Porche, Mercedes, BMW, Lexus dan lainnya. Dapat dilihat melalui boxplot bahwa produsen mobil cukup berpengaruh terhadap harga mobil, contohnya mobil-mobil dengan produsen Rolls-Royce, Aston Martin dan Bentley merupakan jenis mobil mewah yang membuat harganya tinggi.
+- Mobil yang dijual paling banyak merupakan mobil yang di produksi di Tahun 2015-2019. Median harga untuk mobil dari tahun 1994 mengalami tren kenaikan hingga tahun 2021. Beberapa mobil dibawah tahun 1994 memiliki harga yang cukup tinggi
 
-<img src="=EDA3.png" alt="isolated" width="700"/>
+<img src="EDA4.png" alt="isolated" width="700"/>
+
+- Mobil bekas dengan Gear_Type tipe 'Automatic' lebih banyak dari pada mobil bekas dengan Gear_Type 'Manual'. Harga yang ditawarkan lebih bervariasi mobil 'Automatic' dan lebih tinggi mediannya daripada mobil 'Manual'.
+- 'Saudi' merupakan importir mobil dengan jumlah terbanyak, sedangkan mobil yang di impor oleh Gulf Arabic memiliki median harga yang tertinggi, diikuti oleh daerah lain ('Other') dan 'Saudi'.
+- Mobil bekas dengan Options 'Full' memiliki jumlah yang paling banyak tetapi tidak signifikan. Harga mobil bekas dengan Options Full adalah yang tertinggi, diikuti dengan 'Semi Full' dan 'Standard'.
+
+## Modeling
+
+**Feature Engineering**
+
+Sebelum dilakukan modeling terdapat beberapa fitur kategorikal yang dilakukan encoding kemudian scaling sebagai berikut.
+
+| Encoding | Feature|
+| --- | --- |
+| One Hot Encoding | 'Gear_Type', 'Origin', 'Options' |
+| Binary Encoding | 'Type', 'Make','Region' |
+
+Kemudian barulah semua fiture dilakukan standar scaling.
+
+
+
+## Conclutions
