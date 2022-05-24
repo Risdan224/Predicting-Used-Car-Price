@@ -96,6 +96,43 @@ Ensemble Model:
 3. Gradient Boosting Regressor
 4. Xtreme Gradient Boosting Regessor
 
-<img src="evaluation_models.png" alt="isolated" width="700"/>
+Berikut adalah hasil evaluasi terhadap semua model terhadap **data train**.
 
-## Conclutions
+<img src="evalution_models.jpg" alt="isolated" width="1000"/>
+
+<img src="evaluation_models3.jpg" alt="isolated" width="500"/>
+
+Berdasarkan hasil uji terhadap data test diatas, didapatkan bahwa model Xtreme Gradient Boosting memiliki score matrix yang terbaik, selanjutnyan dilakukan hyperparameter tuning terhadap parameter tersebut menggunakan hasil evaluasi terhadap **data test**.
+
+<img src="hyperparameter_tuning_matrix.jpg" alt="isolated" width="500"/>
+
+Dari tabel diatas dapat dilihat bahwa nilai metrik RMSE, MAE dan R2 mengalami perbaikan (1-3%), sedangkan untuk MAPE bertambah sebanyak 3.2%.
+
+## Result
+
+Grafik dibawah adalah grafik perbandingan antara nilai aktual Price dengan nilai hasil prediksi dengan menggunakan model Extreme Gradient Boosting dengan parameter yang telah di tuning. Dari grafik diatas beberapa hal yang dapat ditemukan sebagai berikut.
+
+Pemodelan sudah cukup baik dan linear, dapat dilihat dari grafik dengan bentuk yang hampir linear dan nilai metrik error yang kecil, baik RMSE, MAE, MAPE dan nilai R2 yang besar (0.78)
+Beberapa nilai aktual price yang kecil diatas jika dibandingkan dengan predicted value-nya mengalami error yang cukup banyak, hal ini dikarenakan banyaknya data dengan nilai Price yang kecil. Hal ini dapat menjadi masukan untuk pemodelan kedepannya agar memberikan batas yang lebih tinggi untuk minimal nilai Price.
+Secara umum model sudah cukup baik berdasarkan matrik evaluasi dan grafik diatas. Berikut adalah parameter-parameter yang sangat berpengaruh terhadap penentuan nilai Price pada model.
+
+<img src="predicted_vs_real_testdata.png" alt="isolated" width="900"/>
+
+## Conclusion
+
+<img src="score_after_tuning.jpg" alt="isolated" width="500"/>
+
+Nilai RMSE dan MAE menceritakan bahwa besaran harga Price yang diprediksi dapat memiliki selisih dengan nilai sebenarnya sebesar 29693 SAR (RMSE) atau 16085 SAR (MAE). Untuk mobil bekas dengan harga real yang tinggi (maks Price 850000 SAR) maka nilai error yang dihasilkan (RMSE dan MAE) akan terlihat kecil, tetapi untuk mobil bekas dengan harga yang rendah (min Price 500 SAR) nilai error akan sangat besar. Oleh karena itu model ini masih ditingkatkan dengan memberikan batasan nilai minimum yang lebih tinggi pada data Price.
+
+Nilai MAPE sebesar 1.0% % menandakan bahwa absolute error pada Price yang diprediksi memiliki error sebesar 1.02%, nilai ini sudah cukup baik yang menandakan model dapat memprediksi dengan tingkat akurasi hingga 98 %. Sedangkan nilai R2 sebesar 0.79 mengartikan hubungan antara fitur-fitur yang digunakan di dalam analisis (independent variables) dan Price (dependent variables) sebesar 79%. Nilai ini juga cukup baik namun dapat lebih ditingkatkan lagi. Nilai R2 yang tinggi menandakan bahwa independent variables sangat berpengaruh pada dependent variable. Adapun fitur yang paling berpengaruh di dalam pemodelan adalah Make, Year dan Engine_Size.
+
+Secara keseluruhan model ini cukup baik untuk memprediksi harga mobil bekas, baik untuk penjual mobil maupun untuk pembeli mobil bekas. Model ini misalnya dapat digunakan oleh website yang menjual mobil bekas sehingga pengunjung website dapat memperkirakan harga jual/beli mobil yang diminatinya dan menaikkan jumlah traksaksi yang terdapat di website tersebut.
+
+## Recomendation
+
+Rekomendasi yang dapat diberikan kedepannya untuk membuat pemodelan yang lebih baik adalah:
+
+1. Menggunakan model AdaBoost Regressor dengan melihat penyebab nilai matriks R2 yang sangat kecil, hal ini dikarenakan nilai MAPE yang dihasilkan paling kecil dari setiap model yang dibuat. Bisa jadi dapat menghasilkan model yang lebih baik.
+2. Memberikan batasan minimum nilai price yang lebih tinggi, dikarenakan terdapat beberapa error yang besar untuk nilai prediksi Price dengan harga yang rendah. Atau dapat juga dengan memecah model menjadi 2 jenis untuk harga tinggi dan harga rendah dengan masing-masing model yang berbeda.
+3. Menganalisa kolinearitas fitur-fitur yang digunakan dalam modeling dengan menghitung besaran VIF masing-masing fitur, diharapkan didapatkan model yang lebih baik dengan mengeliminasi fitur yang saling berkorelasi.
+4. Menggunakan motode polinomial pada fitur agar didapatkan model yang lebih sensitif.
