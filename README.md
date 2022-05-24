@@ -76,6 +76,26 @@ Sebelum dilakukan modeling terdapat beberapa fitur kategorikal yang dilakukan en
 
 Kemudian barulah semua fiture dilakukan standar scaling.
 
+**Modeling**
 
+Model yang akan digunakan untuk memprediksi nilai Price disini ada 10, terdiri dari 6 base model dan 4 model ensemble, yang kemudian dipilih salah satu model terbaik. Model tersebut adalah:
+
+Base Model:
+
+1. Linear Regression
+2. KNN Regressor
+3. Decision Tree Regressor
+4. Rigde Regression
+5. Lasso Regression
+6. Elastic Net
+
+Ensemble Model:
+
+1. Random Forest Regressor
+2. Ada Boost Regressor
+3. Gradient Boosting Regressor
+4. Xtreme Gradient Boosting Regessor
+
+<img src="evaluation_models.png" alt="isolated" width="700"/>
 
 ## Conclutions
