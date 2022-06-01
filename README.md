@@ -21,14 +21,9 @@ Salah satu permasalahan yang sering terjadi dalam bisnis jual beli mobil bekas a
 
 Membuat sebuah model yang dapat memprediksi harga mobil bekas berdasarkan spesifikasi yang dimiliki oleh mobil tersebut. Harga yang dihasilkan oleh model ini akan menjadi referensi bagi penjual dan pembeli mobil jika akan melakukan transaksi jual beli mobil bekas. Tujuannya adalah supaya penjual/ pembeli mobil bekas mengambil keputusan lebih cepat dalam melakukan transaksi (menjual/ membeli).
 
-Matrix yang akan digunakan untuk mengevaluasi model yang akan dibuat adalah:
-- Root Mean Squared Error (rmse)
-- R-Squared
-- Mean Absolute Error (MAE)
-- Mean Absolute Percentage Error (MAPE)
-- Mean Squared Log Error (MSLE)
+Matrix Evalution
 
-Model ini dapat digunakan oleh platform jual beli mobil bekas online seperti Syarah.com agar pengunjung website yang ingin menjual atau membeli tidak ragu dalam menentukan harga, hal ini akan berdampak pada naiknya jumlah transaksi pada platform dan menaikkan pertumbuhan bisnis mobil bekas.
+Matrix yang akan digunakan untuk model ini adalah **Mean Absolute Error** dikarenakan masih terdapat banyak outlier pada data.
 
 **Data Information**
 - Data yang digunakan merupakan data spesifikasi/fitur mobil bekas beserta beserta harga jualnya yang telah disediakan oleh Purwadhika. Dilihat dari bentuk dan pola data, diasumsikan bahwa data ini diambil dari website Syarah.com yang menjual mobil bekas di Saudi Arabia.
