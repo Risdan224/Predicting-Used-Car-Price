@@ -119,7 +119,7 @@ Secara umum model sudah cukup baik berdasarkan matrik evaluasi dan grafik diatas
 
 <img src="score_after_tuning_mae.jpg" alt="isolated" width="500"/>
 
-Nilai MAE menceritakan bahwa besaran harga Price yang diprediksi dapat memiliki selisih dengan nilai sebenarnya (+-) 15757 SAR (MAE). Untuk mobil bekas dengan harga yang tinggi (maks Price 850000 SAR) maka nilai error yang dihasilkan (RMSE dan MAE) akan terlihat kecil (1.8%), tetapi untuk mobil bekas dengan harga yang rendah (min Price 500 SAR) nilai error akan sangat besar. Oleh karena itu model ini masih ditingkatkan dengan memberikan batasan nilai minimum yang lebih tinggi pada data Price.
+Nilai MAE menceritakan bahwa besaran harga Price yang diprediksi dapat memiliki selisih dengan nilai sebenarnya (+-) 15757 SAR (MAE). Untuk mobil bekas dengan harga yang tinggi (maks Price 850000 SAR) maka nilai error yang dihasilkan (MAE) akan terlihat kecil (1.8%), tetapi untuk mobil bekas dengan harga yang rendah (min Price 500 SAR) nilai error akan sangat besar. Oleh karena itu model ini masih ditingkatkan dengan memberikan batasan nilai minimum yang lebih tinggi pada data Price.
 
 Secara keseluruhan model ini cukup baik untuk memprediksi harga mobil bekas, baik untuk penjual mobil maupun untuk pembeli mobil bekas. Model ini misalnya dapat digunakan oleh website Syarah.com yang menjual mobil bekas sehingga pengunjung website dapat memperkirakan harga jual/beli mobil yang diminatinya dan menaikkan jumlah traksaksi yang terdapat di website tersebut.
 
