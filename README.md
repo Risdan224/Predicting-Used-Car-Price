@@ -46,13 +46,13 @@ Matrix yang akan digunakan untuk model ini adalah **Mean Absolute Error** dikare
 
 ## Exploratory Data Analysis
 
-<img src="EDA2.png" alt="isolated" width="700"/>
+<img src="pic/EDA2.png" alt="isolated" width="700"/>
 
 - Daerah yang menawarkan penjualan mobil bekas terbanyak terdapat pada kota Riyadh, Dammam dan Jeddah. Harga penjualan mobil dari beberapa daerah tersebut bervariasi dan yang memiliki median tertinggi yaitu dari Kota Dammam dan Sakaka. Secara keseluruhan harga mobil tidak terlalu terpengaruh oleh daerahnya berasal.
 - Produsen mobil bekas terbanyak yang ditawarkan adalah dari Toyota, Hyundai dan Ford. Sedangkan median harga tertinggi adalah mobil buatan Rolls-Royce, Aston Martin dan Bentley. Mobil buatan Land Rover memiliki rentang harga yang paling tinggi, diikuti dengan mobil buatan dari Porche, Mercedes, BMW, Lexus dan lainnya. Dapat dilihat melalui boxplot bahwa produsen mobil cukup berpengaruh terhadap harga mobil, contohnya mobil-mobil dengan produsen Rolls-Royce, Aston Martin dan Bentley merupakan jenis mobil mewah yang membuat harganya tinggi.
 - Mobil yang dijual paling banyak merupakan mobil yang di produksi di Tahun 2015-2019. Median harga untuk mobil dari tahun 1994 mengalami tren kenaikan hingga tahun 2021. Beberapa mobil dibawah tahun 1994 memiliki harga yang cukup tinggi
 
-<img src="EDA4.png" alt="isolated" width="700"/>
+<img src="pic/EDA4.png" alt="isolated" width="700"/>
 
 - Mobil bekas dengan Gear_Type tipe 'Automatic' lebih banyak dari pada mobil bekas dengan Gear_Type 'Manual'. Harga yang ditawarkan lebih bervariasi mobil 'Automatic' dan lebih tinggi mediannya daripada mobil 'Manual'.
 - 'Saudi' merupakan importir mobil dengan jumlah terbanyak, sedangkan mobil yang di impor oleh Gulf Arabic memiliki median harga yang tertinggi, diikuti oleh daerah lain ('Other') dan 'Saudi'.
@@ -95,13 +95,13 @@ Evaluasi menggunakan matrix **Mean Absolute Error** dikarenakan masih terdapat b
 
 Berikut adalah hasil evaluasi terhadap semua model terhadap **data train**.
 
-<img src="evalution_models_mae.jpg" alt="isolated" width="1000"/>
+<img src="pic/evalution_models_mae.jpg" alt="isolated" width="1000"/>
 
-<img src="evaluation_models3_mae.jpg" alt="isolated" width="500"/>
+<img src="pic/evaluation_models3_mae.jpg" alt="isolated" width="500"/>
 
 Berdasarkan hasil uji terhadap data test diatas, didapatkan bahwa model Xtreme Gradient Boosting memiliki score matrix yang terbaik, selanjutnya dilakukan hyperparameter tuning terhadap parameter tersebut menggunakan hasil evaluasi terhadap **data test**.
 
-<img src="hyperparameter_tuning_matrix_mae.jpg" alt="isolated" width="500"/>
+<img src="pic/hyperparameter_tuning_matrix_mae.jpg" alt="isolated" width="500"/>
 
 Dari tabel diatas dapat dilihat bahwa nilai metrik MAE perbaikan (5.4%), sehingga digunakan parameter hasil dari tuning.
 
@@ -113,11 +113,11 @@ Pemodelan sudah cukup baik dan linear, dapat dilihat dari grafik dengan bentuk y
 Beberapa nilai aktual price yang kecil diatas jika dibandingkan dengan predicted value-nya mengalami error yang cukup banyak, hal ini dikarenakan banyaknya data dengan nilai Price yang kecil. Hal ini dapat menjadi masukan untuk pemodelan kedepannya agar memberikan batas yang lebih tinggi untuk minimal nilai Price.
 Secara umum model sudah cukup baik berdasarkan matrik evaluasi dan grafik diatas. Berikut adalah parameter-parameter yang sangat berpengaruh terhadap penentuan nilai Price pada model.
 
-<img src="predicted_vs_real_testdata_mae.png" alt="isolated" width="900"/>
+<img src="pic/predicted_vs_real_testdata_mae.png" alt="isolated" width="900"/>
 
 ## Conclusion
 
-<img src="score_after_tuning_mae.jpg" alt="isolated" width="500"/>
+<img src="pic/score_after_tuning_mae.jpg" alt="isolated" width="500"/>
 
 Nilai MAE menceritakan bahwa besaran harga Price yang diprediksi dapat memiliki selisih dengan nilai sebenarnya (+-) 15757 SAR (MAE). Untuk mobil bekas dengan harga yang tinggi (maks Price 850000 SAR) maka nilai error yang dihasilkan (MAE) akan terlihat kecil (1.8%), tetapi untuk mobil bekas dengan harga yang rendah (min Price 500 SAR) nilai error akan sangat besar. Oleh karena itu model ini masih ditingkatkan dengan memberikan batasan nilai minimum yang lebih tinggi pada data Price.
 
