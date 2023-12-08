@@ -40,7 +40,7 @@ if __name__=="__main__":
     st.markdown("<h1 style='text-align: center; color: black;'>USED-CAR PRICE PREDICTION</h1>", unsafe_allow_html=True)
 
     # Displaying an image
-    st.image(str(Path(__file__).parents[1] /'pic/images.png', width=700))
+    st.image(str(Path(__file__).parents[1] /'pic/images.png'), width=700)
 
     st.write("""  
             This application predicts a used-car price based on some features. Please input your car features below here:
