@@ -2,6 +2,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 import predict
+import sklearn
 
 def get_user_input(df):
     car_maker = st.selectbox("Manufacturer:", used_car.Make.unique())
