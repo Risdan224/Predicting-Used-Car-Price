@@ -1,6 +1,4 @@
 from pathlib import Path
-import datetime
-
 import pandas as pd
 import streamlit as st
 import predict
