@@ -32,7 +32,7 @@ def get_user_input(df):
 
 if __name__=="__main__":
     
-    used_car = pd.read_csv('data/used_car_cleaned.csv')
+    used_car = pd.read_csv(str(Path(__file__).parents[1] /'data/used_car_cleaned.csv'))
 
     st.set_page_config(page_title="Used Car Price Prediction", page_icon=None, layout="centered")
     
@@ -40,10 +40,10 @@ if __name__=="__main__":
     st.markdown("<h1 style='text-align: center; color: black;'>USED-CAR PRICE PREDICTION</h1>", unsafe_allow_html=True)
 
     # Displaying an image
-    st.image('pic/images.png', width=700)
+    st.image(str(Path(__file__).parents[1] /'pic/images.png', width=700))
 
     st.write("""  
-            This application predict used-car price based on some features. Please input your car features below here:
+            This application predicts a used-car price based on some features. Please input your car features below here:
              """)
     
     user_data = get_user_input(used_car)
