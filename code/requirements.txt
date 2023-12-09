@@ -3,3 +3,4 @@ category-encoders==2.4.1
 xgboost==1.6.1
 pandas==1.3.5
 numpy==1.21.6
+pathlib2==2.3.5
