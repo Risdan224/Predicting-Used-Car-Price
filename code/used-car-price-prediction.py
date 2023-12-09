@@ -52,3 +52,5 @@ if __name__=="__main__":
         formatted_X = "{:.2f}".format(used_car_price)
         st.write(f"**Estimated car price :** {formatted_X} RSA")
         st.write("This price calculated using machine learning model, can be used to estimate used-car price for selling or buying.")
+
+    st.write("Created by: Risdan Kristori")
