@@ -1,3 +1,4 @@
 scikit-learn==1.0.2
 category-encoders==2.4.1
 xgboost==1.6.1
+pandas==0.22.0
